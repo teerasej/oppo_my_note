@@ -1,16 +1,11 @@
 # my_note
 
-A new Flutter project.
+A workshop to learn Flutter for OPPO Team
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Provider workshop 
 
-A few resources to get you started if this is your first Flutter project:
+- Start project use git command: `git clone -b complete-form-navigation https://github.com/teerasej/oppo_my_note`
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Completed project use git command: `git clone -b complete-provider https://github.com/teerasej/oppo_my_note`
