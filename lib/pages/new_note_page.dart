@@ -1,15 +1,19 @@
 // lib/pages/new_note_page.dart
 
 import 'package:flutter/material.dart';
+import 'package:my_note/provider/note_provider.dart';
+import 'package:provider/provider.dart';
 
 class NewNotePage extends StatelessWidget {
   NewNotePage({Key? key}) : super(key: key);
 
   final formKey = GlobalKey<FormState>();
-  String? note = '';
+  String note = '';
 
   @override
   Widget build(BuildContext context) {
+    var provider = context.read<NoteProvider>();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('New Note'),
@@ -24,7 +28,7 @@ class NewNotePage extends StatelessWidget {
               Text('Note:'),
               TextFormField(
                 onSaved: (newValue) {
-                  note = newValue;
+                  note = newValue ?? '';
                 },
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -40,6 +44,7 @@ class NewNotePage extends StatelessWidget {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
                       print('form: $note');
+                      provider.addNote(note);
                       Navigator.pop(context);
                     }
                   },
