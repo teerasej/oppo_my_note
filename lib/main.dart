@@ -1,9 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:my_note/pages/home_page.dart';
 import 'package:my_note/pages/new_note_page.dart';
+import 'package:my_note/provider/note_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (BuildContext context) {
+            return NoteProvider();
+          },
+        )
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
