@@ -1,19 +1,17 @@
 // lib/pages/home_page.dart
 
 import 'package:flutter/material.dart';
+import 'package:my_note/provider/note_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
-  List<String> listNotes = [
-    'Tony Stark',
-    'Steve Roger',
-    'Peter Parker',
-    'William Strange'
-  ];
-
   @override
   Widget build(BuildContext context) {
+    var provider = context.watch<NoteProvider>();
+    var listNotes = provider.listNotes;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
